@@ -1,12 +1,20 @@
 const express = require('express');
+const http = require("http").createServer();
+
 const app = express();
+const port = 3001;
 
-app.get('/', (req, res) => {
+//const server = http.createServer(app);  //creates server with the http as a pathway
 
-    res.send("hello world!")
+const Server = require("socket.io")(http);
 
-})
 
-app.listen(3001, () => {
-    console.log("listening on http://localhost:3001");
+//When user connects to server
+Server.on("connection", (socket) => {
+    socket.emit("joined", "You are connected (:"); //sends user the socket and the message 'you joined (:'
+});
+
+
+http.listen(port, () => {
+    console.log("Server is listening on localhost: " + port);
 })
