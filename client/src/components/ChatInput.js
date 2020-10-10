@@ -19,16 +19,4 @@ class ChatInput extends React.Component
     }
 }
 
-/*
-function ChatInput()
-{
-    return (
-        <div className="chat-input-area">
-                
-                <textarea placeholder="Enter a message!" name="msg" required></textarea>
-                <button type="button">Send Message</button>
-        </div>
-    )
-}
-*/
 export default ChatInput
