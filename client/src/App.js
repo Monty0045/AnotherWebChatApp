@@ -27,10 +27,12 @@ function sendMessage()
 function App() {
   return (
     <div className="App">
+
       
       <label id='messages'></label>
       <textarea id='userInput'></textarea>
       <button type='button' onClick={sendMessage}>TestClick</button>
+      
     </div>
   );
 }
