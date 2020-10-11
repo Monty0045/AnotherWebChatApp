@@ -1,5 +1,5 @@
 import React from "react"
-import ChatInput from "./ChatInput"
+
 
 function Chat()
 {
@@ -8,7 +8,11 @@ function Chat()
 
             <label id="messagesBox"></label>
 
-            <ChatInput />
+            <label id='messages'></label>
+            <textarea id='userInput'></textarea>
+            
+
+            
         </div>
     )
 }

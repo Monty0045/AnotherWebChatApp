@@ -8,12 +8,22 @@ const io = require("socket.io-client");
 let socket = io.connect("http://localhost:3001"); //connects to server with specific url using port 3001
 socket.on("joined", (data) =>   //if socket is online with message joined (everything went correctly)
 {  
-  socket.send("14");
   console.log("received: " + data);
 });
 
 socket.on('message', data => {
+  //this is a message from the server (initially connecting to server...)
   console.log(data);
+});
+
+
+
+socket.on('receivedMessage', data => {
+
+  
+  let messageLabel = document.getElementById("messagesBox");
+  messageLabel.innerHTML = messageLabel.innerHTML + "\n" + data;
+
 });
 
 
@@ -27,9 +37,7 @@ function sendMessage()
 function App() {
   return (
     <div className="App">
-      
-      <label id='messages'></label>
-      <textarea id='userInput'></textarea>
+      <Chat />
       <button type='button' onClick={sendMessage}>TestClick</button>
     </div>
   );

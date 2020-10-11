@@ -15,10 +15,19 @@ const Server = require("socket.io")(http);
 Server.on("connection", (socket) => {
     socket.emit("joined", "You are connected (:"); //sends user the socket and the message 'you joined (:'
 
+    function sendMessage(data)
+    {
+        Server.sockets.emit("receivedMessage", data);
+    }
 
     socket.on('message', (data) => {
-        console.log(data);
+        
+        sendMessage(data);
+
     });
+
+    
+
 
 });
 
