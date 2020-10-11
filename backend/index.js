@@ -9,9 +9,17 @@ const port = 3001;
 const Server = require("socket.io")(http);
 
 
+
+
 //When user connects to server
 Server.on("connection", (socket) => {
     socket.emit("joined", "You are connected (:"); //sends user the socket and the message 'you joined (:'
+
+
+    socket.on('message', (data) => {
+        console.log(data);
+    });
+
 });
 
 

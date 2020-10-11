@@ -4,16 +4,20 @@ import React from "react"
 class ChatInput extends React.Component
 {
 
-    sendMessage(){
-        console.log("this works")
-    }
+    
 
     render() {
+
+        function sendMessage(){
+            //socket.sendMessage("woah woah woah");
+            console.log("this works")
+        }
+
         return (
             <div className="chat-input-area">
                     
                     <textarea placeholder="Enter a message!" name="msg" required></textarea>
-                    <button type="button" onClick={this.sendMessage.bind(this)} >Send Message</button>
+                    <button type="button" onClick={sendMessage.bind(this)} >Send Message</button>
             </div>
         )
     }
