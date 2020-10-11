@@ -17,10 +17,9 @@ socket.on('message', data => {
 });
 
 
-function testMessage()
+function sendMessage()
 {
-  let value = document.getElementById("doesthisWork").value;
-  console.log("this does happen though");
+  let value = document.getElementById("userInput").value;
   socket.send(value);
 }
 
@@ -29,9 +28,9 @@ function App() {
   return (
     <div className="App">
       
-      <label></label>
-      <textarea id='doesthisWork'></textarea>
-      <button type='button' onClick={testMessage}>TestClick</button>
+      <label id='messages'></label>
+      <textarea id='userInput'></textarea>
+      <button type='button' onClick={sendMessage}>TestClick</button>
     </div>
   );
 }
