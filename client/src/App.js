@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <Chat />
-      <textarea id='userInput'></textarea>   
+      <textarea id='userInput' placeholder="Enter your message!"></textarea>   
       <button type='button' onClick={sendMessage} id="enterBut">Enter</button>
     </div>
   );
