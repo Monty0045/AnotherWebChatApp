@@ -23,7 +23,7 @@ socket.on('receivedMessage', data => {
   
   let messageLabel = document.getElementById("messagesBox");
   messageLabel.innerHTML = messageLabel.innerHTML + "\n" + data;
-
+  messageLabel.scrollTop = messageLabel.scrollHeight;
 });
 
 
@@ -37,16 +37,9 @@ function sendMessage()
 function App() {
   return (
     <div className="App">
-<<<<<<< HEAD
       <Chat />
-=======
-
-      
-      <label id='messages'></label>
-      <textarea id='userInput'></textarea>
->>>>>>> 22f048b04569181f69609c6474dde473d8df868f
-      <button type='button' onClick={sendMessage}>TestClick</button>
-      
+      <textarea id='userInput'></textarea>   
+      <button type='button' onClick={sendMessage} id="enterBut">Enter</button>
     </div>
   );
 }

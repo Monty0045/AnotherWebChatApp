@@ -6,12 +6,8 @@ function Chat()
     return (
         <div id="chatSection">
 
-            <label id="messagesBox"></label>
-
-            <label id='messages'></label>
-            <textarea id='userInput'></textarea>
-            
-
+            <textarea id="messagesBox"></textarea>
+        
             
         </div>
     )

@@ -10,23 +10,22 @@ const Server = require("socket.io")(http);
 
 
 
-
 //When user connects to server
 Server.on("connection", (socket) => {
     socket.emit("joined", "You are connected (:"); //sends user the socket and the message 'you joined (:'
 
+    let randUserName = "user" + Math.floor(Math.random() * (9999 - 0 + 1)) + 0;
+
     function sendMessage(data)
     {
-        Server.sockets.emit("receivedMessage", data);
+        Server.sockets.emit("receivedMessage", randUserName + ": " + data);
     }
 
     socket.on('message', (data) => {
         
-        sendMessage(data);
+        sendMessage(data.trim());
 
     });
-
-    
 
 
 });
