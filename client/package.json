@@ -10,8 +10,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
+<<<<<<< HEAD
     "react-socket-io": "^0.2.5",
     "socket.io": "^2.3.0",
+=======
+>>>>>>> 22f048b04569181f69609c6474dde473d8df868f
     "socket.io-client": "^2.3.1"
   },
   "scripts": {

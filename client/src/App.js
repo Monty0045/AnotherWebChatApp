@@ -37,8 +37,16 @@ function sendMessage()
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
       <Chat />
+=======
+
+      
+      <label id='messages'></label>
+      <textarea id='userInput'></textarea>
+>>>>>>> 22f048b04569181f69609c6474dde473d8df868f
       <button type='button' onClick={sendMessage}>TestClick</button>
+      
     </div>
   );
 }
